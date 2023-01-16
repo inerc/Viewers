@@ -16,9 +16,9 @@
 #
 # 1. Building the React application for production
 # 2. Setting up our Nginx (Alpine Linux) image w/ step one's output
+
+
 #
-
-
 # Stage 1: Build the application
 # docker build -t ohif/viewer:latest .
 FROM node:14-slim as builder
@@ -46,8 +46,6 @@ RUN yarn install --verbose
 
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 ENV QUICK_BUILD true
-# ENV GENERATE_SOURCEMAP=false
-# ENV REACT_APP_CONFIG=config/default.js
 
 RUN yarn run build
 
