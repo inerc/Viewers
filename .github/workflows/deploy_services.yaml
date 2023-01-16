@@ -1,0 +1,25 @@
+name: deploy_services
+on:
+  push:
+    branches:
+      - master
+  pull_request: {}
+
+jobs:
+  build_deploy_services:
+    runs-on: self-hosted
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v1
+      
+      - name: Build OHIF
+        run: docker-compose build
+
+      - name: remove old containers
+        run: docker-compose down
+
+      - name: Deploy OHIF and orthanc
+        run: docker-compose up -d --force-recreate
+
+      - name: Checking stat of containers
+        run: docker ps

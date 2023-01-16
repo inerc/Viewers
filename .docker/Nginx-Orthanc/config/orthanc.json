@@ -30,9 +30,9 @@
   "RemoteAccessAllowed": true,
   "SslEnabled": false,
   "SslCertificate": "certificate.pem",
-  "AuthenticationEnabled": false,
+  "AuthenticationEnabled": true,
   "RegisteredUsers": {
-    "test": "test"
+    "user": "jvh6JeZn"
   },
   "DicomModalities": {},
   "DicomModalitiesInDatabase": false,
